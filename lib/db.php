@@ -67,6 +67,7 @@ class db{
     }
 
     public function excu(){
+         
         $this->query();
         if(mysqli_affected_rows($this->connnection) > 0){
             return true;

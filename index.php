@@ -1,4 +1,11 @@
-
+<?php
+    require "lib/category.php";
+    require "lib/content.php";
+    require "lib/validation.php";
+    require "lib/helper.php";
+    $allContent = new content;
+    $allContent =  $allContent->getAllContents();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,80 +147,19 @@
 				</div>
 
 				<div class="grid" id="cGrid">
-					<div class="grid-item business" data-category="business">
-						<div class="img-wrap">
-							<img src="design/front/images/course-pic.jpg" alt="courses picture">
-						</div>
-						<a href="#" class="learn-desining-banner-course">Learn Web Designing >>></a>
-						<div class="box-body">
-							<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
-							<section>
-								<p><span>Duration:</span> 4 Years</p>
-								<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-								<p><span>Fee:</span> 4,00,000</p>
-							</section>
-						</div>
-					</div>
-
-					<div class="grid-item business" data-category="business">
-						<div class="img-wrap">
-							<img src="design/front/images/course-pic.jpg" alt="courses picture">
-						</div>
-						<a href="#" class="learn-desining-banner-course">Learn Web Designing >>></a>
-						<div class="box-body">
-							<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
-							<section>
-								<p><span>Duration:</span> 4 Years</p>
-								<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-								<p><span>Fee:</span> 4,00,000</p>
-							</section>
-						</div>
-					</div>
-
-					<div class="grid-item design" data-category="design">
-						<div class="img-wrap">
-							<img src="design/front/images/course-pic.jpg" alt="courses picture">
-						</div>
-						<a href="#" class="learn-desining-banner-course">Learn Web Designing >>></a>
-						<div class="box-body">
-							<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
-							<section>
-								<p><span>Duration:</span> 4 Years</p>
-								<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-								<p><span>Fee:</span> 4,00,000</p>
-							</section>
-						</div>
-					</div>
-
-					<div class="grid-item design" data-category="design">
-						<div class="img-wrap">
-							<img src="design/front/images/course-pic.jpg" alt="courses picture">
-						</div>
-						<a href="#" class="learn-desining-banner-course">Learn Web Designing >>></a>
-						<div class="box-body">
-							<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
-							<section>
-								<p><span>Duration:</span> 4 Years</p>
-								<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-								<p><span>Fee:</span> 4,00,000</p>
-							</section>
-						</div>
-					</div>
-
+					
+					<?php foreach($allContent as $content):?>	
 					<div class="grid-item development" data-category="development">
 						<div class="img-wrap">
-							<img src="design/front/images/course-pic.jpg" alt="courses picture">
+							<img src="<?=$content['cover'] ?>" style="width: 100%;height:300px" alt="courses picture">
 						</div>
-						<a href="#" class="learn-desining-banner-course">Learn Web Designing >>></a>
+						<a href="singleblog.php" class="learn-desining-banner-course"><?=$content['name'] ?></a>
 						<div class="box-body">
-							<p>Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum Lorem Ipsum lorem ipsum</p>
-							<section>
-								<p><span>Duration:</span> 4 Years</p>
-								<p><span>Class Time:</span> 6am-12am / 11am-5pm</p>
-								<p><span>Fee:</span> 4,00,000</p>
-							</section>
+							<p><?= $content['short_desc']?></p>	
 						</div>
 					</div>
+					<?php endforeach;?>	
+
 
 					
 				</div>

@@ -11,4 +11,8 @@ class content extends db{
         $res = $this->select($this->table,"*")->getAll();
         return $res;
     }
+    public function deleteContent($id){
+        $res = $this->delete($this->table)->where('id','=',$id)->excu();
+        return $res;
+    }
 }

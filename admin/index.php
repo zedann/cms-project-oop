@@ -45,6 +45,8 @@
         </div>
         <div class="card-body">
           Welcome To Dashboard <?=ucwords($_SESSION['user']['name'])?>
+          <br>
+          <a href="../index.php" target="_blank" class="btn btn-secondary">Visit Your Site</a>
         </div>
 
       </div>

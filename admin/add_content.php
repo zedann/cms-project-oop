@@ -35,7 +35,7 @@
                     "name"=>$_POST['name'],
                     "cover"=>$path,
                     "short_desc"=>$_POST['short_desc'],
-                    "main_content"=>$_POST['main_content'],
+                    "main_content"=> addslashes($_POST['main_content']) ,
                     "user_id"=>$_SESSION['user']['id'],
                     "category_id"=>$_POST['category_id'],
                 ];

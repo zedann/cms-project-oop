@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="card-body">
-            <a href="add_content.php" class="btn btn-success my-2">Add New</a>
+            <a href="add_content.php" class="btn btn-warning my-2">Add New</a>
             
           <table class="table table-bordered">
                   <thead>
@@ -62,13 +62,11 @@
                       <th>Main Content</th>
                       <th>User</th>
                       <th>Category</th>
-                      <th style="width: 20px;">Edit</th>
-                      <th style="width: 20px;">Delete</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
-                   <?php foreach($allContent as $content):?>
-                   
+                   <?php foreach($allContent as $content):?> 
                     <tr>
                       <td><?=$content['id']?></td>
                       <td><?=$content['name']?></td>
@@ -77,10 +75,7 @@
                       <td><?=$content['main_content']?></td>
                       <td><?=$content['user_id']?></td>
                       <td><?=$content['category_id']?></td>                      
-                      <td class="text-center">
-                        <a href="edit.php?id=" class="btn btn-success w-100">Edit</a>
-                      </td>
-                      <td class="text-center"><a class="btn btn-danger w-100" href="delete_category.php?id=">Delete</a></td>
+                      <td><a href="delete_content.php?id=<?=$content['id']?>" class="btn btn-danger">Delete</a></td>                      
                     </tr>
                     <?php endforeach;?>
                     
