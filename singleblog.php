@@ -1,10 +1,24 @@
 <?php
+require "lib/category.php";
+require "lib/content.php";
+require "lib/validation.php";
+require "lib/review.php";
+require "lib/helper.php";
+if(isset($_GET['id'])){
+	$id = $_GET['id'];
+	$singleContent = new content;
+	$singleContent =  $singleContent->getSingleContent($id);
+	$reviews = new review;
+	$allReviews = $reviews->getAllReviews();
 
+}else {
+	header("LOCATION: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>education</title>
+	<title><?=$singleContent['name']?></title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="design/front/css/all.css">
@@ -97,178 +111,57 @@
 				<img src="images/page-banner2.jpg" alt="Image of Bannner">
 				<img src="images/page-banner3.jpg" alt="Image of Bannner">
 			</div>
-			<div class="container">
-				<h1>welcome to education pro</h1>
-				<h3>With our advance search feature you can now find the trips for you...</h3>
-			</div>
+			
 			 <div id="owl-four-nav" class="owl-nav"></div>
 		</div>
 
 		<div class="page-content" itemscope itemtype=" http://schema.org/Blog">
 			<div class="container">
 				<article class="page-article" itemprop="blogPost">
-					<h1 itemprop="about">Top 10 collegs of 2018 in Nepal.</h1>
-					<span><a href="#" itemprop="author">By Spyders Lab</a><a href="#">In Business</a><a href="#">Posted on 2nd December, 2018</a><a href="#">5 Comments</a></span>
-					<img itemprop="image" src="images/top-college-pic.jpg" alt="Image">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<div class="share-section">
-						<span>Share Via<a href=""><i class="fab fa-facebook-f"></i></a><a href=""><i class="fab fa-instagram"></i></a><a href=""><i class="fab fa-twitter"></i></a></span>
-					</div>
+					<h1 itemprop="about"><?=$singleContent['name']?></h1>
+					<span><a href="#" itemprop="author">By <?=$singleContent['user_name']?></a><a href="#">In <?=$singleContent['category_name']?></a></span>
+					<img itemprop="image" src="<?=$singleContent['cover']?>" alt="Image">
+					<p style="font-size: 25px;"><?=$singleContent['main_content']?></p>
+					
 				</article>
 				
 				
 				<section class="comment-section">
 					<div id="comments" class="comments-area comment" itemprop="comment">
-								<h3 class="comments-title">8 Comments</h3>
-								<ol class="comment-list">
+								<ol class="comment-list" id="comment-container">
+									<?php foreach($allReviews as $review): ?>
 									<li class="comment even thread-even depth-1 parent">
 										<article class="comment-body">
 											<footer class="comment-meta">
 												<div class="comment-author vcard">
 													<img class="avatar photo" src="images/comment-img1.jpg" alt="">
-													<b class="fn"><a href="#">Michael</a></b>
+													<b class="fn" ><a  href="#"><?=$review['name']?></a></b>
 												</div>
 												<div class="comment-metadata">
 													<a href="#"><time datetime="2013-10-02">October 09, 2015</time></a>
 												</div><br>
 											</footer>
 											<div class="comment-content">
-												<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+												<p "><?=$review['comment']?></p>
 											</div>
-											<div class="reply">
-												<a href="#" class="comment-reply-link">Reply</a>
-											</div>
+											
 										</article>
-										<ol class="children">
-											<li class="comment odd alt depth-2 parent">
-												<article class="comment-body">
-													<footer class="comment-meta">
-														<div class="comment-author vcard">
-															<img class="avatar photo" src="images/comment-img2.jpg" alt="">
-															<b class="fn"><a href="#">John Doe</a></b>
-														</div>
-														<div class="comment-metadata">
-															<a href="#"><time datetime="2013-10-02">October 09, 2015</time></a>
-														</div><br>
-													</footer>
-													<div class="comment-content">
-														<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p>
-													</div>
-													<div class="reply">
-														<a href="#" class="comment-reply-link">Reply</a>
-													</div>
-												</article>
-												<ol class="children">
-													<li class="comment odd alt depth-2 parent">
-														<article class="comment-body">
-															<footer class="comment-meta">
-																<div class="comment-author vcard">
-																	<img class="avatar photo" src="images/comment-img3.jpg" alt="">
-																	<b class="fn"><a href="#">John Doe</a></b>
-																</div>
-																<div class="comment-metadata">
-																	<a href="#"><time datetime="2013-10-02">October 09, 2015</time></a>
-																</div><br>
-															</footer>
-															<div class="comment-content">
-																<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p>
-															</div>
-															<div class="reply">
-																<a href="#" class="comment-reply-link">Reply</a>
-															</div>
-														</article>
-													</li>
-												</ol>
-											</li>
-										</ol>
+										
 									</li>
-									<li class="comment even thread-even depth-1 parent">
-										<article class="comment-body">
-											<footer class="comment-meta">
-												<div class="comment-author vcard">
-													<img class="avatar photo" src="images/comment-img4.jpg" alt="">
-													<b class="fn"><a href="#">Hilco de Roo</a></b>
-												</div>
-												<div class="comment-metadata">
-													<a href="#"><time datetime="2013-10-02">October 09, 2015</time></a>
-												</div><br>
-											</footer>
-											<div class="comment-content">
-												<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </p>
-											</div>
-											<div class="reply">
-												<a href="#" class="comment-reply-link">Reply</a>
-											</div>
-										</article>
-									</li>
+									<?php endforeach;?>
+									
 								</ol>
 					</div>
 					<div class="comment-form">
 						<h2>leave a comment</h2>
-						<form>
-							<input type="text" placeholder="Username*">
-							<input type="email" placeholder="Email*">
-							<textarea placeholder="Write a comment.....">
+						
+							<input type="text" name="name" id="name" placeholder="Username*">
+							<input type="email" name="email" id="email" placeholder="Email*">
+							<input type="hidden" value="<?=$singleContent['id'] ?>" name="content_id" id="content_id">
+							<textarea id="review" name="review" placeholder="Write a comment.....">
 							</textarea>
-							<input type="submit" value="Submit">
-						</form>
+							<input type="submit" onclick="sendReview()" value="Submit">
+						
 						<p>Note: Your email address will not be published</p>
 					</div>
 				</section>
@@ -363,7 +256,6 @@
 			</div>
 		</footer>
 	</div>
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/lightbox.js"></script>
 	<script type="text/javascript" src="js/all.js"></script>
 	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
@@ -372,5 +264,49 @@
 	<script type="text/javascript" src="js/jquery.rateyo.js"></script>
 	<script type="text/javascript" src="js/jquery.mmenu.all.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		function sendReview(){
+			let name = $("#name").val();
+			let email = $("#email").val();
+			let review = $("#review").val();
+			let contentId = $("#content_id").val();
+			let commentContainer = $('#comment-container');
+			$.ajax({
+				type:"POST",
+				url:'sendreview.php',
+				data:{
+					name:name,
+					email:email,
+					review:review,
+					contentId:contentId
+				},
+				success:function(){
+					$comment = `
+					<li class="comment even thread-even depth-1 parent">
+										<article class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img class="avatar photo" src="images/comment-img1.jpg" alt="">
+													<b class="fn" ><a  href="#">${name}</a></b>
+												</div>
+												<div class="comment-metadata">
+													<a href="#"><time datetime="2013-10-02">October 09, 2015</time></a>
+												</div><br>
+											</footer>
+											<div class="comment-content">
+												<p>${review}</p>
+											</div>
+											
+										</article>
+										
+									</li>
+					`;
+					commentContainer.append($comment);
+				}
+			});
+			
+		}
+	</script>
 </body>
 </html>

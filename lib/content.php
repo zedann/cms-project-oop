@@ -15,4 +15,13 @@ class content extends db{
         $res = $this->delete($this->table)->where('id','=',$id)->excu();
         return $res;
     }
+    public function getSingleContent($id){
+         $res = $this->queryEx("SELECT content.*,users.name as user_name,category.name as category_name FROM `content` 
+         INNER JOIN users 
+         ON users.id = content.user_id
+         INNER JOIN category
+         ON category.id = content.category_id
+         ")->where('content.id','=',$id)->getRow();
+         return $res;
+    }
 }

@@ -17,7 +17,7 @@ class db{
     }
 
     public function where($column,$compair,$value){
-        $this->sql .= " WHERE `$column` $compair '$value'";
+        $this->sql .= " WHERE $column $compair '$value'";
         return $this;
     }
 
@@ -50,7 +50,7 @@ class db{
         
         $row = $this->preparData($data);
         $this->sql = "INSERT INTO `$table` SET $row";
-        // echo $this->sql;die;
+        echo $this->sql;die;
         return $this;
     }
 
@@ -90,6 +90,10 @@ class db{
 
     public function query(){
         $this->query =  mysqli_query($this->connnection,$this->sql);
+    }
+    public function queryEx($queryInput){
+        $this->sql = $queryInput;
+        return $this;
     }
 
     public function showError(){

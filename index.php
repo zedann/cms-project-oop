@@ -153,7 +153,7 @@
 						<div class="img-wrap">
 							<img src="<?=$content['cover'] ?>" style="width: 100%;height:300px" alt="courses picture">
 						</div>
-						<a href="singleblog.php" class="learn-desining-banner-course"><?=$content['name'] ?></a>
+						<a href="singleblog.php?id=<?=$content['id']?>" class="learn-desining-banner-course"><?=$content['name'] ?></a>
 						<div class="box-body">
 							<p><?= $content['short_desc']?></p>	
 						</div>
